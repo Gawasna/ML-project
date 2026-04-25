@@ -1,0 +1,57 @@
+name: "Data collection task"
+description: "Assign nhiệm vụ thu thập dataset .jsonl cho team member"
+title: "[DATA] <chủ đề> — <tên member>"
+labels: ["dataset", "needs-review"]
+body:
+  - type: input
+    id: assignee
+    attributes:
+      label: "Assigned to"
+      placeholder: "@github-username"
+    validations:
+      required: true
+  - type: input
+    id: topic
+    attributes:
+      label: "Chủ đề / domain"
+      placeholder: "ví dụ: Lập trình Python cơ bản"
+    validations:
+      required: true
+  - type: input
+    id: quantity
+    attributes:
+      label: "Số lượng records yêu cầu"
+      placeholder: "ví dụ: 50 records"
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: "Deadline"
+      placeholder: "ví dụ: 2026-05-10"
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: "Ví dụ mẫu (2-3 records)"
+      placeholder: |
+        {"instruction": "...", "input": "", "output": "..."}
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Yêu cầu đặc biệt"
+      placeholder: "Output tối thiểu 3 câu, tiếng Việt..."
+    validations:
+      required: false
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Checklist cho member trước khi tạo PR"
+      options:
+        - label: "Tạo branch data/<tên>-<chủ-đề> từ master"
+        - label: "File đặt đúng tại data/train/<tên>_<chủ_đề>.jsonl"
+        - label: "Chạy validate local không có lỗi"
+        - label: "Mỗi dòng là JSON hợp lệ với instruction và output"
