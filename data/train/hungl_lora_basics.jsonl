@@ -1,0 +1,2 @@
+{"instruction": "Giải thích LoRA là gì?", "input": "", "output": "LoRA (Low-Rank Adaptation) là kỹ thuật fine-tune LLM bằng cách thêm các ma trận hạng thấp vào các lớp attention, giúp giảm số lượng tham số cần train đáng kể."}
+{"instruction": "LoRA khác full fine-tuning như thế nào?", "input": "", "output": "Full fine-tuning cập nhật toàn bộ tham số mô hình, tốn nhiều VRAM. LoRA chỉ train thêm 2 ma trận nhỏ A và B cho mỗi lớp, giữ nguyên trọng số gốc, tiết kiệm 90%+ bộ nhớ."}
