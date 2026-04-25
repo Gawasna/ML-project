@@ -1,0 +1,6 @@
+[submodule "extractor"]
+	path = extractor
+	url = https://github.com/Gawasna/mslc-extractor.git
+[submodule "overlay"]
+	path = overlay
+	url = https://github.com/Gawasna/m-mslc-overlay.git
