@@ -1,0 +1,3 @@
+# Merge .jsonl bằng union — không conflict khi nhiều người append
+data/train/*.jsonl merge=union
+data/train/**/*.jsonl merge=union
