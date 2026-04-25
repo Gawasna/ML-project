@@ -1,0 +1,5 @@
+{
+  "name": "LoRA Dataset Architect",
+  "description": "A professional data preparation dashboard for AI model training (Instruction Tuning). Converts raw text into structured JSONL datasets.",
+  "requestFramePermissions": []
+}
