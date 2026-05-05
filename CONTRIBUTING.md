@@ -1,6 +1,13 @@
-# Hướng dẫn đóng góp dataset
+# Hướng dẫn đóng góp (Workflow & Dataset)
 
-## Quy trình 4 bước
+## 0. Quy trình thu thập dữ liệu thô (Video/Audio)
+Nếu task của bạn là khai thác và chuẩn bị dữ liệu raw từ nền tảng VTV (VietNamToday), hãy tuân thủ quy trình bảo vệ trùng lặp sau:
+1. **Lấy định danh ID & URL CDN**: Khởi chạy `python entry.py`, tuỳ chọn danh tính người dùng đóng góp cá nhân (hung, quang, hoang). Cung cấp các URL bài báo để script tự động phân tích lấy luồng dữ liệu chuẩn (thường là CDN dạng master.m3u8). Hành động này kết thúc tự động chặn/huỷ bỏ bằng cách kiểm tra ID trong `targets.txt`.
+2. **Kéo file đa phương tiện cục bộ**: Khởi chạy `python process.py`. Tool tự động đọc định danh danh tính của bạn, tiến hành check trùng lặp chéo giữa các workspace (Cross-workspace Duplicate Validation). Nếu an toàn, `yt-dlp` sẽ tải luồng `mp4` gốc về thư mục `data/raw/video/` và dùng công cụ `ffmpeg` mã hoá PCM WAV để tách âm thanh chuyển về `data/raw/audio/`. Ở bất kì trường hợp phát sinh cảnh báo danh tính trùng từ script này, hãy huỷ bỏ và giải quyết report tay cho Lead.
+
+---
+
+## Cấu trúc chuẩn bị Dataset 4 bước
 
 ### 1. Nhận task
 Lead tạo Issue với label `dataset` và assign cho bạn.  
