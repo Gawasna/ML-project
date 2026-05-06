@@ -1,0 +1,12 @@
+.vs/
+*.tlog
+packages/
+*.user
+*.filters
+x64/
+Release/
+Debug/
+docs/*
+CLAUDE.md
+/logs
+.kiro/
