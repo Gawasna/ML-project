@@ -41,27 +41,33 @@ class Validator:
             self.err(f"{fpath}:{lno} — Thiếu field: {miss}"); return False
 
         ins, out = rec.get("instruction",""), rec.get("output","")
+        inp = rec.get("input","")
+        prompt = (ins + "\n" + inp).strip()
+        
         if not ins.strip(): self.err(f"{fpath}:{lno} — instruction rỗng"); ok=False
         if not out.strip(): self.err(f"{fpath}:{lno} — output rỗng");      ok=False
         if len(ins) > MAX_INSTR_LEN: self.warn(f"{fpath}:{lno} — instruction quá dài ({len(ins)})")
         if len(out) > MAX_OUT_LEN:   self.warn(f"{fpath}:{lno} — output quá dài ({len(out)})")
 
-        h = sha(ins)
+        # Use full prompt (instruction + input) for exact duplicate checking
+        h = sha(prompt)
         if h in self.seen_hash:
             pf, pl = self.seen_hash[h]
-            self.err(f"{fpath}:{lno} — TRÙNG CHÍNH XÁC với {pf}:{pl} → \"{ins[:60]}\"")
+            self.err(f"{fpath}:{lno} — TRÙNG CHÍNH XÁC với {pf}:{pl} → \"{prompt[:60]}\"")
             ok = False
         else:
             self.seen_hash[h] = (fpath, lno)
 
-        ng = ngrams(ins)
+        # For fuzzy matching, prioritize input if instruction is long and repetitive
+        text_for_sim = inp if len(inp) > 10 else prompt
+        ng = ngrams(text_for_sim)
         for pngs, pf, pl, pv in self.seen_ng:
             sim = jaccard(ng, pngs)
             if sim >= self.threshold:
                 self.warn(f"{fpath}:{lno} — Có thể trùng ({sim:.0%}) với {pf}:{pl}\n"
-                          f"           Hiện tại: \"{ins[:60]}\"\n"
+                          f"           Hiện tại: \"{prompt[:60]}\"\n"
                           f"           Trước đó: \"{pv[:60]}\"")
-        self.seen_ng.append((ng, fpath, lno, ins))
+        self.seen_ng.append((ng, fpath, lno, prompt))
         return ok
 
     def validate_file(self, path):
