@@ -18,6 +18,17 @@ venv/
 node_modules/
 
 # research n artifacts
-docs/
+docs/*
+!docs/**/*.md
+!docs/*.md
 *.jsonl
 *.rar
+
+# ML Models, checkpoints and logs
+*.gguf
+*.pkl
+*.bin
+*.safetensors
+*checkpoint*/
+outputs/
+logs/
