@@ -13,3 +13,11 @@ bin/
 
 # Ignore venv
 venv/
+
+# node_modules
+node_modules/
+
+# research n artifacts
+docs/
+*.jsonl
+*.rar

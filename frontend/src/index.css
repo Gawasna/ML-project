@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+
+
+@layer utilities {
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -40;
+    }
+  }
+
+  .animate-dash {
+    animation: dash 1s linear infinite;
+  }
+}
+
+/* Base custom font integration */
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f1f5f9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typing pulse animation fallback for chat bubble streaming */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .4;
+  }
+}
+
+.chat-bubble-streaming {
+  animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
