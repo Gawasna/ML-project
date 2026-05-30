@@ -1,0 +1,78 @@
+================================================================================
+DETAILED DATASET STATISTICS REPORT
+================================================================================
+Total files: 10
+Total Rows (samples): 2,982,765
+Total Size: 850.28 MB
+================================================================================
+
+File: test_ncduy_11225.jsonl
+  - Size: 3.261 MB
+  - Rows: 11,175
+  - Unique Instructions: ['Dịch thuật sang Tiếng việt theo chủ đề Thời sự']
+  - English input (words): Min=1, Max=88, Avg=14.89
+  - Vietnamese output (words): Min=2, Max=114, Avg=19.05
+--------------------------------------------------------------------------------
+File: train_30_thoisu_2.jsonl
+  - Size: 0.016 MB
+  - Rows: 30
+  - Unique Instructions: ['Dịch thuật sang Tiếng việt theo chủ đề Thời sự']
+  - English input (words): Min=12, Max=50, Avg=26.63
+  - Vietnamese output (words): Min=21, Max=80, Avg=43.83
+--------------------------------------------------------------------------------
+File: train_31_thoisu_1.jsonl
+  - Size: 0.015 MB
+  - Rows: 31
+  - Unique Instructions: ['Dịch thuật sang Tiếng việt theo chủ đề Thời sự']
+  - English input (words): Min=7, Max=39, Avg=26.35
+  - Vietnamese output (words): Min=13, Max=66, Avg=40.81
+--------------------------------------------------------------------------------
+File: train_43038_thoisu_3.jsonl
+  - Size: 14.889 MB
+  - Rows: 43,038
+  - Unique Instructions: ['Dịch thuật sang Tiếng việt theo chủ đề Thời sự']
+  - English input (words): Min=0, Max=128, Avg=17.62
+  - Vietnamese output (words): Min=0, Max=170, Avg=24.77
+--------------------------------------------------------------------------------
+File: train_537_hoang_economy.jsonl
+  - Size: 0.208 MB
+  - Rows: 537
+  - Unique Instructions: ['Dịch thuật sang Tiếng việt theo chủ đề Thời sự']
+  - English input (words): Min=4, Max=66, Avg=19.65
+  - Vietnamese output (words): Min=5, Max=95, Avg=28.61
+--------------------------------------------------------------------------------
+File: train_615_quang_society.jsonl
+  - Size: 0.244 MB
+  - Rows: 615
+  - Unique Instructions: ['Dịch thuật sang Tiếng việt theo chủ đề Thời sự']
+  - English input (words): Min=1, Max=53, Avg=20.21
+  - Vietnamese output (words): Min=1, Max=84, Avg=30.66
+--------------------------------------------------------------------------------
+File: train_895_thoisu_4.jsonl
+  - Size: 4.774 MB
+  - Rows: 895
+  - Unique Instructions: ['Dịch thuật sang Tiếng việt theo chủ đề Thời sự']
+  - English input (words): Min=56, Max=1828, Avg=386.76
+  - Vietnamese output (words): Min=76, Max=2368, Avg=515.16
+--------------------------------------------------------------------------------
+File: train_EVB_42987.jsonl
+  - Size: 14.874 MB
+  - Rows: 42,987
+  - Unique Instructions: ['Dịch thuật sang Tiếng việt theo chủ đề Thời sự']
+  - English input (words): Min=0, Max=128, Avg=17.63
+  - Vietnamese output (words): Min=0, Max=170, Avg=24.78
+--------------------------------------------------------------------------------
+File: train_ncduy_2872192.jsonl
+  - Size: 808.714 MB
+  - Rows: 2,872,192
+  - Unique Instructions: ['Dịch thuật sang Tiếng việt theo chủ đề Thời sự']
+  - English input (words): Min=1, Max=1787, Avg=14.25
+  - Vietnamese output (words): Min=1, Max=1816, Avg=18.03
+--------------------------------------------------------------------------------
+File: valid_ncduy_11316.jsonl
+  - Size: 3.288 MB
+  - Rows: 11,265
+  - Unique Instructions: ['Dịch thuật sang Tiếng việt theo chủ đề Thời sự']
+  - English input (words): Min=2, Max=479, Avg=14.92
+  - Vietnamese output (words): Min=2, Max=482, Avg=19.06
+--------------------------------------------------------------------------------
