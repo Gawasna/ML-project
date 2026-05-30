@@ -19,3 +19,5 @@ node_modules/
 
 # research n artifacts
 docs/
+*.jsonl
+*.rar
