@@ -1,0 +1,20 @@
+FROM ./data/train/prepared/clean/Qwen2.5-1.5B-Vi-q4_k_m.gguf
+
+# Set parameters
+PARAMETER temperature 0.3
+PARAMETER top_p 0.9
+PARAMETER repeat_penalty 1.1
+PARAMETER stop "<|im_start|>"
+PARAMETER stop "<|im_end|>"
+PARAMETER stop "<|endoftext|>"
+
+# Set prompt template (ChatML)
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
+{{ .Response }}<|im_end|>"""
+
+# Default system prompt
+SYSTEM """Dịch đoạn văn tiếng Anh sang tiếng Việt một cách tự nhiên và chuyên nghiệp theo chủ đề Thời sự."""
